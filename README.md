@@ -1,4 +1,5 @@
 # Description
+
 This project will provide a minimal dashboard with sentimental analysis information. The user will provide a term and the latest related tweets will be retrieved. Following that the system will apply sentimental analysis techniques related to the aforementioned term.
 
 # Use cases examples
@@ -75,3 +76,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Test
