@@ -6,6 +6,7 @@ import store from "./store/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import "./fonts/Baloo2-Regular.ttf";
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
