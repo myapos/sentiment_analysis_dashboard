@@ -6,10 +6,16 @@ import { styles } from "./styles";
 import { commonStyles } from "../../common/styles";
 import classnames from "classnames";
 import { ReactComponent as FBLogo } from "../../images/facebook-svgrepo-com.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { auth, selectAuth } from "./LoginSlice";
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
 function LoginForm(props) {
   const classes = useStyles();
+
+  const authorized = useSelector(selectAuth);
+  const dispatch = useDispatch();
+
   return (
     <>
       <div
@@ -18,7 +24,7 @@ function LoginForm(props) {
         Welcome to SAM
       </div>
       <Form
-        onSubmit={() => console.log("onSubmit")}
+        onSubmit={() => dispatch(auth())}
         initialValues={{ stooge: "larry", employed: false }}
         render={({ handleSubmit, form, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>
