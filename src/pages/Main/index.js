@@ -4,8 +4,10 @@ import { createUseStyles } from "react-jss";
 import Login from "../Login";
 import Dashboard from "../Dashboard";
 import { styles } from "./styles";
+import { commonStyles } from "../../common/styles";
+import classnames from "classnames";
 
-const useStyles = createUseStyles(styles);
+const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
 function debounce(fn, ms) {
   let timer;
@@ -36,7 +38,7 @@ const Main = () => {
   });
 
   return (
-    <div className={classes.container}>
+    <div className={classnames(classes.container, classes.center)}>
       <Particles
         id="tsparticles"
         className={classes.particles}
@@ -105,7 +107,7 @@ const Main = () => {
                 enable: true,
                 value_area: 800,
               },
-              value: 80,
+              value: 15,
             },
             opacity: {
               value: 0.5,
