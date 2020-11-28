@@ -6,9 +6,4 @@ export const styles = {
     // justifyContent: "center",
     // alignItems: "center",
   },
-  particles: {
-    position: "fixed",
-    top: 0,
-    zIndex: -1,
-  },
 };

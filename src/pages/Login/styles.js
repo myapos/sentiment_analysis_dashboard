@@ -1,7 +1,6 @@
 import { colors } from "../../common/colors";
 export const styles = {
   container: {
-    zIndex: 0,
     minWidth: "400px",
     minHeight: "200px",
     background: "whitesmoke",
@@ -24,9 +23,18 @@ export const styles = {
       filter: "brightness(120%)",
     },
   },
+  facebookLink: {
+    marginTop: "5px",
+    textDecoration: "none",
+  },
   facebookLogo: {
     height: "20px",
     width: "20px",
     color: "white",
+  },
+  particles: {
+    position: "fixed",
+    top: 0,
+    zIndex: -1,
   },
 };

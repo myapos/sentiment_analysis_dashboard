@@ -4,9 +4,9 @@ import { auth } from "../pages/Login/LoginSlice";
 
 import * as api from "../api";
 function* authorize(action) {
-  const { payload } = action;
-
-  yield call(api.login);
+  const resp = yield call(api.login);
+  debugger;
+  console.log("resp", resp);
 }
 
 function* mainSaga() {

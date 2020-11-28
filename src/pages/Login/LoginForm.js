@@ -31,6 +31,10 @@ function LoginForm(props) {
             <div className={classes.rowItem}>
               <button
                 type="submit"
+                onClick={() => {
+                  //
+                  // console.log("clicked");
+                }}
                 className={classnames(
                   classes.facebookBtn,
                   classes.center,
@@ -40,6 +44,19 @@ function LoginForm(props) {
                 <FBLogo className={classes.facebookLogo} />
                 Continue with Facebook
               </button>
+              {/* <a
+                href="http://localhost:8585/login/facebook"
+                // target="_blank"
+                className={classnames(
+                  classes.facebookBtn,
+                  classes.center,
+                  classes.button,
+                  classes.facebookLink
+                )}
+              >
+                <FBLogo className={classes.facebookLogo} />
+                Continue with Facebook
+              </a> */}
             </div>
           </form>
         )}
