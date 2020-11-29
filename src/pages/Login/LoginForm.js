@@ -1,13 +1,14 @@
 import React from "react";
 import { Form } from "react-final-form";
 import { createUseStyles } from "react-jss";
+import { useDispatch } from "react-redux";
+import classnames from "classnames";
 
 import { styles } from "./styles";
 import { commonStyles } from "../../common/styles";
-import classnames from "classnames";
 import { ReactComponent as FBLogo } from "../../images/facebook-svgrepo-com.svg";
-import { useDispatch } from "react-redux";
 import { sendLogin } from "./LoginSlice";
+
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
 function LoginForm(props) {

@@ -1,6 +1,7 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 
 import { sendLogin, sendLogout, auth } from "../pages/Login/LoginSlice";
+import { fetchTweets } from "../pages/Dashboard/DashboardSlice";
 import * as api from "../api";
 function deleteAllCookies() {
   var cookies = document.cookie.split(";");
@@ -28,9 +29,15 @@ function* logout(action) {
   }
 }
 
+function* callTwitter(action) {
+  console.log("action", action);
+  yield call(api.fetchTweets, action.payload.term);
+}
+
 function* mainSaga() {
   yield takeEvery(sendLogin().type, login);
   yield takeEvery(sendLogout().type, logout);
+  yield takeEvery(fetchTweets().type, callTwitter);
 }
 
 export default mainSaga;

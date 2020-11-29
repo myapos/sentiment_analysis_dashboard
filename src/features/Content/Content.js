@@ -7,6 +7,7 @@ import { commonStyles } from "../../common/styles";
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 function Content(props) {
   const classes = useStyles();
+  const { handleSubmit } = props;
   return (
     <div className={classes.contentContainer}>
       <h1 className={classnames(classes.center, classes.contentItem)}>
@@ -22,7 +23,7 @@ function Content(props) {
         term that the user provided.
       </div>
 
-      <InputForm className={classes.contentItem} />
+      <InputForm className={classes.contentItem} handleSubmit={handleSubmit} />
     </div>
   );
 }

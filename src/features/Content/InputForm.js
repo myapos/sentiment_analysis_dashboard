@@ -10,12 +10,12 @@ import { styles } from "./styles";
 import { commonStyles } from "../../common/styles";
 
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
-function InputForm({ className }) {
+function InputForm({ className, handleSubmit }) {
   const classes = useStyles();
   return (
     <div className={classnames(classes.formContainer, className)}>
       <Form
-        onSubmit={() => console.log("submitted")}
+        onSubmit={(values) => handleSubmit(values)}
         initialValues={{ term: "" }}
         render={({ handleSubmit, form, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit} className={classes.form}>

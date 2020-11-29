@@ -3,6 +3,7 @@ import createSagaMiddleware from "redux-saga";
 
 import counterReducer from "../features/counter/counterSlice";
 import LoginReducer from "../pages/Login/LoginSlice";
+import DashboardReducer from "../pages/Dashboard/DashboardSlice";
 
 import sagas from "./sagas";
 
@@ -13,6 +14,7 @@ const store = configureStore({
   reducer: {
     counter: counterReducer,
     login: LoginReducer,
+    dashboard: DashboardReducer,
   },
   devTools: {
     name: "Sentimental Analysis Dashboard",
