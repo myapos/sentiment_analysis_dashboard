@@ -1,7 +1,6 @@
-import { call, put, takeEvery, all } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 
 import { sendLogin, sendLogout, auth } from "../pages/Login/LoginSlice";
-import { removeCookie } from "react-cookie";
 import * as api from "../api";
 function deleteAllCookies() {
   var cookies = document.cookie.split(";");
@@ -21,17 +20,15 @@ function* login(action) {
 function* logout(action) {
   const res = yield call(api.logout);
 
-  console.log("res", res);
-
-  // clear cookies
-  yield deleteAllCookies();
-  // auth to false
-
-  yield put(auth(false));
+  if (res.clearedCookies === "OK") {
+    // clear cookies
+    yield deleteAllCookies();
+    // auth to false
+    yield put(auth(false));
+  }
 }
 
 function* mainSaga() {
-  console.log("initialized sagas");
   yield takeEvery(sendLogin().type, login);
   yield takeEvery(sendLogout().type, logout);
 }
