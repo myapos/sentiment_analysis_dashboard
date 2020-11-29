@@ -16,6 +16,7 @@ const AuthRoute = (props) => {
 
     // action for login and save authorized to redux state
     if (allCookies["connect.sid"]) {
+      // I can save user data from url here to redux
       // login was succesful
       // trigger action to save authorized true
       dispatch(auth(true));
