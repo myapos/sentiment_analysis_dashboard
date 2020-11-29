@@ -6,14 +6,13 @@ import { styles } from "./styles";
 import { commonStyles } from "../../common/styles";
 import classnames from "classnames";
 import { ReactComponent as FBLogo } from "../../images/facebook-svgrepo-com.svg";
-import { useSelector, useDispatch } from "react-redux";
-import { auth, selectAuth, sendLogin } from "./LoginSlice";
+import { useDispatch } from "react-redux";
+import { sendLogin } from "./LoginSlice";
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
 function LoginForm(props) {
   const classes = useStyles();
 
-  const authorized = useSelector(selectAuth);
   const dispatch = useDispatch();
 
   return (
@@ -31,10 +30,6 @@ function LoginForm(props) {
             <div className={classes.rowItem}>
               <button
                 type="submit"
-                onClick={() => {
-                  //
-                  // console.log("clicked");
-                }}
                 className={classnames(
                   classes.facebookBtn,
                   classes.center,
@@ -44,19 +39,6 @@ function LoginForm(props) {
                 <FBLogo className={classes.facebookLogo} />
                 Continue with Facebook
               </button>
-              {/* <a
-                href="http://localhost:8585/login/facebook"
-                // target="_blank"
-                className={classnames(
-                  classes.facebookBtn,
-                  classes.center,
-                  classes.button,
-                  classes.facebookLink
-                )}
-              >
-                <FBLogo className={classes.facebookLogo} />
-                Continue with Facebook
-              </a> */}
             </div>
           </form>
         )}

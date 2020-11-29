@@ -13,8 +13,6 @@ export const LoginSlice = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       //   state.value += 1;
-      debugger;
-      console.log("action", action.payload);
       state.authorized = action.payload;
     },
     sendLogin: (state, action) => {

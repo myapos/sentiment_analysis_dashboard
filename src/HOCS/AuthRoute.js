@@ -7,17 +7,15 @@ import { useDispatch } from "react-redux";
 import { auth } from "../pages/Login/LoginSlice";
 
 const AuthRoute = (props) => {
-  const { type, authorized, cookies, ...rest } = props;
+  const { type, authorized, cookies } = props;
   const dispatch = useDispatch();
   useEffect(() => {
     // cookies
     const allCookies = cookies.getAll();
     // check if login was succesful
-    console.log("allCookies", allCookies);
-    debugger;
+
     // action for login and save authorized to redux state
     if (allCookies["connect.sid"]) {
-      debugger;
       // login was succesful
       // trigger action to save authorized true
       dispatch(auth(true));
