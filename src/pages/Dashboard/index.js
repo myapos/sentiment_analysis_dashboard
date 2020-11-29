@@ -2,6 +2,10 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { createUseStyles } from "react-jss";
 import classnames from "classnames";
+
+import Header from "../../features/Header/Header";
+import Content from "../../features/Content/Content";
+
 import { styles } from "./styles";
 import { sendLogout } from "../Login/LoginSlice";
 import { commonStyles } from "../../common/styles";
@@ -11,14 +15,9 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
   return (
-    <div>
-      Dashboard
-      <div
-        className={classnames(classes.logout, classes.center)}
-        onClick={() => dispatch(sendLogout())}
-      >
-        Logout
-      </div>
+    <div className={classnames(classes.container)}>
+      <Header />
+      <Content />
     </div>
   );
 };

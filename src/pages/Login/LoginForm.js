@@ -24,7 +24,7 @@ function LoginForm(props) {
       </div>
       <Form
         onSubmit={() => dispatch(sendLogin())}
-        initialValues={{ stooge: "larry", employed: false }}
+        initialValues={{}}
         render={({ handleSubmit, form, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>
             <div className={classes.rowItem}>
