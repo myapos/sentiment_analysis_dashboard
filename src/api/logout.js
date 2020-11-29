@@ -2,10 +2,10 @@ import customFetch from "../utils/customFetch";
 
 const login = async () => {
   try {
-    // const url = "http://localhost:8585/check";
-    const url = "http://localhost:8585/login/facebook";
+    const url = "http://localhost:8585/logout";
 
-    return (window.location.href = url);
+    const res = await customFetch(url);
+    return res;
   } catch (e) {
     console.error("error:", e);
   }

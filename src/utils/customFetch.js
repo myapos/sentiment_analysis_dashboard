@@ -1,9 +1,13 @@
 const customFetch = async (url) => {
-  const fetched = await fetch(url);
+  const fetched = await fetch(url, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
 
-  const result = fetched.json();
-
-  return result;
+  return await fetched.json();
 };
 
 export default customFetch;
