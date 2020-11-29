@@ -5,6 +5,7 @@ export const LoginSlice = createSlice({
   initialState: {
     authorized: false,
     sendLogin: false,
+    sendLogout: false,
   },
   reducers: {
     auth: (state, action) => {
@@ -24,10 +25,18 @@ export const LoginSlice = createSlice({
       console.log("action", action.payload);
       state.sendLogin = true;
     },
+    sendLogout: (state, action) => {
+      // Redux Toolkit allows us to write "mutating" logic in reducers. It
+      // doesn't actually mutate the state because it uses the Immer library,
+      // which detects changes to a "draft state" and produces a brand new
+      // immutable state based off those changes
+      //   state.value += 1;
+      state.sendLogout = true;
+    },
   },
 });
 
-export const { auth, sendLogin } = LoginSlice.actions;
+export const { auth, sendLogin, sendLogout } = LoginSlice.actions;
 
 export const selectAuth = (state) => state.login.authorized;
 
