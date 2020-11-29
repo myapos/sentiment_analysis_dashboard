@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
+import { withCookies } from "react-cookie";
+import { useDispatch } from "react-redux";
+
+import { auth } from "../pages/Login/LoginSlice";
 
 const AuthRoute = (props) => {
-  const { type, authorized } = props;
-  // check if login was succesful
+  const { type, authorized, cookies, ...rest } = props;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    // cookies
+    const allCookies = cookies.getAll();
+    // check if login was succesful
+    console.log("allCookies", allCookies);
+    debugger;
+    // action for login and save authorized to redux state
+    if (allCookies["connect.sid"]) {
+      debugger;
+      // login was succesful
+      // trigger action to save authorized true
+      dispatch(auth(true));
+    }
+  });
 
-  // cookies
-  // action for login and save authorized to redux state
-  console.log("document.cookie", document.cookie);
   if (type === "guest" && authorized) {
     return <Redirect to="/dashboard" />;
   } else if (type === "private" && !authorized) {
@@ -18,8 +33,11 @@ const AuthRoute = (props) => {
 };
 
 const mapStateToProps = ({ login: authorized }) => ({
-  // ...authorized,
-  authorized: false,
+  ...authorized,
+  // authorized: false,
 });
+const Connected = connect(mapStateToProps)(AuthRoute);
 
-export default connect(mapStateToProps)(AuthRoute);
+const WithCookies = withCookies(Connected);
+
+export default WithCookies;
