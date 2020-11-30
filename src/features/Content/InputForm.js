@@ -23,7 +23,6 @@ function InputForm({ className, handleSubmit }) {
               {/* <label>Term</label> */}
               <Field name="term" component="input" placeholder="Search Twitter">
                 {({ input, placeholder, meta, ...rest }) => {
-                  console.log(input, placeholder, rest);
                   return (
                     <span className={classes.searchBar}>
                       <FontAwesomeIcon

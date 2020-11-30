@@ -3,6 +3,8 @@ export const styles = {
   container: {
     maxWidth: "400px",
     maxHeight: "200px",
+    height: "35vh",
+    width: "80vh",
     background: "whitesmoke",
     borderRadius: "5px",
     boxShadow: "10px 8px 10px #000",
