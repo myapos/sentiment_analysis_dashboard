@@ -1,8 +1,8 @@
 import { colors } from "../../common/colors";
 export const styles = {
   container: {
-    minWidth: "400px",
-    minHeight: "200px",
+    maxWidth: "400px",
+    maxHeight: "200px",
     background: "whitesmoke",
     borderRadius: "5px",
     boxShadow: "10px 8px 10px #000",
@@ -36,5 +36,18 @@ export const styles = {
     position: "fixed",
     top: 0,
     zIndex: -1,
+  },
+  "@media screen and (max-width: 600px)": {
+    container: {
+      minWidth: "200px",
+      minHeight: "100px",
+    },
+    welcome: {
+      fontSize: "1.4rem",
+    },
+    facebookBtn: {
+      width: "100%",
+      fontSize: "0.8rem!important",
+    },
   },
 };

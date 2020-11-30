@@ -1,7 +1,7 @@
 export const styles = {
   container: {
     height: "70vh",
-    width: "100vh",
+    maxWidth: "80vh",
     backgroundColor: "whitesmoke",
     borderRadius: "5px",
     opacity: "0.9",
@@ -14,6 +14,12 @@ export const styles = {
     "&:hover": {
       cursor: "pointer",
       filter: "brightness(80%)",
+    },
+  },
+  "@media screen and (max-width: 600px)": {
+    container: {
+      height: "70vh",
+      maxWidth: "50vh",
     },
   },
 };

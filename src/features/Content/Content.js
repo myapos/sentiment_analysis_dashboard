@@ -10,7 +10,13 @@ function Content(props) {
   const { handleSubmit } = props;
   return (
     <div className={classes.contentContainer}>
-      <h1 className={classnames(classes.center, classes.contentItem)}>
+      <h1
+        className={classnames(
+          classes.center,
+          classes.contentItem,
+          classes.title
+        )}
+      >
         How to use?
       </h1>
       <div className={classnames(classes.description, classes.contentItem)}>

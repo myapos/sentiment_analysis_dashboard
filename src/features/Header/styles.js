@@ -12,4 +12,9 @@ export const styles = {
       textDecoration: "none",
     },
   },
+  // "@media screen and (max-width: 600px)": {
+  //   headerContainer: {
+  //     height: "5%",
+  //   },
+  // },
 };

@@ -32,9 +32,9 @@ function LoginForm(props) {
               <button
                 type="submit"
                 className={classnames(
-                  classes.facebookBtn,
+                  classes.button,
                   classes.center,
-                  classes.button
+                  classes.facebookBtn
                 )}
               >
                 <FBLogo className={classes.facebookLogo} />
