@@ -1,6 +1,6 @@
 export const styles = {
   container: {
-    height: "70vh",
+    height: "35vh",
     maxWidth: "80vh",
     backgroundColor: "whitesmoke",
     borderRadius: "5px",
@@ -18,8 +18,7 @@ export const styles = {
   },
   "@media screen and (max-width: 600px)": {
     container: {
-      height: "70vh",
-      maxWidth: "50vh",
+      maxWidth: "30vh",
     },
   },
 };
