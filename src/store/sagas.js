@@ -44,15 +44,16 @@ function* logout(action) {
 }
 
 function* callTwitter(action) {
+  // clear previous errors
+
+  yield put(saveError({}));
+
   const res = yield call(api.fetchTweets, action.payload.term);
-  debugger;
+
   if (!isError(res)) {
     const { data: tweets, meta } = res;
 
     yield put(receivedTweets(tweets));
-  } else {
-    // yield put(saveError(res));
-    // throw new Error(res);
   }
 }
 

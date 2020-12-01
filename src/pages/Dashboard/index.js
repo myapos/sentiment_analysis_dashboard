@@ -16,7 +16,7 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const handleSubmit = (term) => dispatch(fetchTweets(term));
   const fetching = useSelector(selectFetching);
-  console.log("fetching", fetching);
+
   return (
     <div className={classnames(classes.container)}>
       <Header />
