@@ -12,8 +12,8 @@ const safe = (handler, saga, ...args) =>
     try {
       yield call(saga, ...args, action);
     } catch (err) {
-      console.log("safe", JSON.stringify(err));
-      yield call(handler, ...args, err);
+      const errorObj = JSON.parse(err.message);
+      yield put(handler(errorObj));
     }
   };
 
@@ -45,14 +45,13 @@ function* logout(action) {
 
 function* callTwitter(action) {
   const res = yield call(api.fetchTweets, action.payload.term);
-
+  debugger;
   if (!isError(res)) {
     const { data: tweets, meta } = res;
 
     yield put(receivedTweets(tweets));
   } else {
-    debugger;
-    yield put(saveError(res));
+    // yield put(saveError(res));
     // throw new Error(res);
   }
 }

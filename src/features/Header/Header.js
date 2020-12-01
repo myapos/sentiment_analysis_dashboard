@@ -1,6 +1,5 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
-import classnames from "classnames";
 
 import { useDispatch } from "react-redux";
 import { styles } from "./styles";
