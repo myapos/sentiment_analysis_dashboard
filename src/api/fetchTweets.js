@@ -3,8 +3,7 @@ import customFetch from "../utils/customFetch";
 const fetchTweets = async (term) => {
   // const url = "http://localhost:8585/check";
   const url =
-    "http://localhost:8585/tweets?query=" +
-    window.encodeURIComponent(term).replace(/\s/g, "");
+    "http://localhost:8585/tweets?query=" + window.encodeURIComponent(term);
   const res = customFetch(url);
 
   return res;
