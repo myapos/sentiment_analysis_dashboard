@@ -5,6 +5,7 @@ import counterReducer from "../features/counter/counterSlice";
 import LoginReducer from "../pages/Login/LoginSlice";
 import DashboardReducer from "../pages/Dashboard/DashboardSlice";
 import BannerSlice from "../features/Banner/BannerSlice";
+import ModalSlice from "../features/Modal/ModalSlice";
 
 import sagas from "./sagas";
 
@@ -18,6 +19,7 @@ const store = configureStore({
     login: LoginReducer,
     dashboard: DashboardReducer,
     bannerStack: BannerSlice,
+    modal: ModalSlice,
   },
   devTools: {
     name: "Sentimental Analysis Dashboard",
