@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-
+import { useDispatch } from "react-redux";
 function CustomModal({
   show,
   handleClose,
@@ -9,7 +9,10 @@ function CustomModal({
   body,
   onSaveText,
   onCloseText,
+  yes,
 }) {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <Modal show={show} onHide={handleClose}>
@@ -18,7 +21,13 @@ function CustomModal({
         </Modal.Header>
         <Modal.Body>{body}</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              dispatch(yes());
+              handleClose();
+            }}
+          >
             {onSaveText}
           </Button>
           <Button variant="primary" onClick={handleClose}>

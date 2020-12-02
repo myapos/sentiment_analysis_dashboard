@@ -41,11 +41,10 @@ export const styles = {
   },
   input: {
     width: "100%",
-    height: "25px",
+    height: "30px",
     borderRadius: "20px",
     border: "1px solid slategray",
     textAlign: "center",
-    marginBottom: "5px",
     "&:focus": {
       outline: "none",
     },
