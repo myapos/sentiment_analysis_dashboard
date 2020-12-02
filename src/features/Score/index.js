@@ -11,7 +11,7 @@ function Score({ score }) {
   const classes = useStyles();
   return (
     <div className={classnames(classes.description, classes.center)}>
-      Sentimental Analysis Score:
+      Sentiment Analysis Score:
       <span
         className={classnames({
           [classes.positive]: score > 0,
