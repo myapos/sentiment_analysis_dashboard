@@ -4,7 +4,7 @@ import InputForm from "./InputForm";
 import classnames from "classnames";
 import { styles } from "./styles";
 import { commonStyles } from "../../common/styles";
-import Error from "../Error/Error";
+import Banner from "../Banner/Banner";
 
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
@@ -13,7 +13,7 @@ function Content(props) {
   const { handleSubmit } = props;
   return (
     <div className={classes.contentContainer}>
-      <Error />
+      <Banner />
       <h1
         className={classnames(
           classes.center,

@@ -24,10 +24,22 @@ export const DasboardSlice = createSlice({
       state.tweets = action.payload;
       state.fetching = false;
     },
+    clearTweets: (state, action) => {
+      // Redux Toolkit allows us to write "mutating" logic in reducers. It
+      // doesn't actually mutate the state because it uses the Immer library,
+      // which detects changes to a "draft state" and produces a brand new
+      // immutable state based off those changes
+      state.tweets = {};
+      state.fetching = false;
+    },
   },
 });
 
-export const { fetchTweets, receivedTweets } = DasboardSlice.actions;
+export const {
+  fetchTweets,
+  receivedTweets,
+  clearTweets,
+} = DasboardSlice.actions;
 
 export const selectTweets = (state) => state.dashboard.tweets;
 export const selectFetching = (state) => state.dashboard.fetching;

@@ -1,8 +1,12 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 
 import { sendLogin, sendLogout, auth } from "../pages/Login/LoginSlice";
-import { fetchTweets, receivedTweets } from "../pages/Dashboard/DashboardSlice";
-import { saveError } from "../features/Error/ErrorSlice";
+import {
+  fetchTweets,
+  receivedTweets,
+  clearTweets,
+} from "../pages/Dashboard/DashboardSlice";
+import { saveBanner, showBanner } from "../features/Banner/BannerSlice";
 import isError from "../utils/isError";
 import * as api from "../api";
 
@@ -13,7 +17,9 @@ const safe = (handler, saga, ...args) =>
       yield call(saga, ...args, action);
     } catch (err) {
       const errorObj = JSON.parse(err.message);
+      yield put(showBanner(true));
       yield put(handler(errorObj));
+      yield put(clearTweets());
     }
   };
 
@@ -46,8 +52,8 @@ function* logout(action) {
 function* callTwitter(action) {
   // clear previous errors
 
-  yield put(saveError({}));
-
+  yield put(saveBanner({}));
+  yield put(showBanner(true));
   const res = yield call(api.fetchTweets, action.payload.term);
 
   if (!isError(res)) {
@@ -60,7 +66,7 @@ function* callTwitter(action) {
 function* mainSaga() {
   yield takeEvery(sendLogin().type, login);
   yield takeEvery(sendLogout().type, logout);
-  yield takeEvery(fetchTweets().type, safe(saveError, callTwitter));
+  yield takeEvery(fetchTweets().type, safe(saveBanner, callTwitter));
   // yield takeEvery(fetchTweets().type, callTwitter);
 }
 
