@@ -5,6 +5,7 @@ export const DasboardSlice = createSlice({
   initialState: {
     term: "",
     tweets: {},
+    score: 0,
     fetching: false,
   },
   reducers: {
@@ -21,7 +22,9 @@ export const DasboardSlice = createSlice({
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-      state.tweets = action.payload;
+
+      state.tweets = action.payload.tweets;
+      state.score = action.payload.score;
       state.fetching = false;
     },
     clearTweets: (state, action) => {
@@ -43,5 +46,6 @@ export const {
 
 export const selectTweets = (state) => state.dashboard.tweets;
 export const selectFetching = (state) => state.dashboard.fetching;
+export const selectScore = (state) => state.dashboard.score;
 
 export default DasboardSlice.reducer;
