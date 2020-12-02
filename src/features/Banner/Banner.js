@@ -46,7 +46,7 @@ function Banner(props) {
     // show spinner
     return (
       <div className={classes.center}>
-        <BeatLoader color={"#0e47a1"} />
+        <BeatLoader color={"#4bb062"} />
       </div>
     );
   }
