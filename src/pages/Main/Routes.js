@@ -5,9 +5,9 @@ import Dashboard from "../Dashboard";
 import NoMatch from "../NoMatch";
 import AuthRoute from "../../HOCS/AuthRoute";
 import withParticles from "../../HOCS/withParticles";
-import { CookiesProvider } from "react-cookie";
 function Routes(props) {
   const NoMatchWithBackground = withParticles(NoMatch);
+  const DashboardWithBackground = withParticles(Dashboard);
 
   return (
     <Router>
@@ -19,7 +19,7 @@ function Routes(props) {
         </AuthRoute>
 
         <AuthRoute exact path="/dashboard" type="private">
-          <Dashboard />
+          <DashboardWithBackground />
         </AuthRoute>
         <AuthRoute exact path="/" type="guest">
           <Login />

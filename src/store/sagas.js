@@ -1,7 +1,28 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 
 import { sendLogin, sendLogout, auth } from "../pages/Login/LoginSlice";
+import {
+  fetchTweets,
+  receivedTweets,
+  clearTweets,
+} from "../pages/Dashboard/DashboardSlice";
+import { saveBanner, showBanner } from "../features/Banner/BannerSlice";
+import isError from "../utils/isError";
 import * as api from "../api";
+
+// https://yiniski.medium.com/redux-saga-error-handling-7f1dafa4be37
+const safe = (handler, saga, ...args) =>
+  function* (action) {
+    try {
+      yield call(saga, ...args, action);
+    } catch (err) {
+      const errorObj = JSON.parse(err.message);
+      yield put(showBanner(true));
+      yield put(handler(errorObj));
+      yield put(clearTweets());
+    }
+  };
+
 function deleteAllCookies() {
   var cookies = document.cookie.split(";");
 
@@ -28,9 +49,25 @@ function* logout(action) {
   }
 }
 
+function* callTwitter(action) {
+  // clear previous errors
+
+  yield put(saveBanner({}));
+  yield put(showBanner(true));
+  const res = yield call(api.fetchTweets, action.payload.term);
+
+  if (!isError(res)) {
+    const { data: tweets, meta } = res;
+
+    yield put(receivedTweets(tweets));
+  }
+}
+
 function* mainSaga() {
   yield takeEvery(sendLogin().type, login);
   yield takeEvery(sendLogout().type, logout);
+  yield takeEvery(fetchTweets().type, safe(saveBanner, callTwitter));
+  // yield takeEvery(fetchTweets().type, callTwitter);
 }
 
 export default mainSaga;

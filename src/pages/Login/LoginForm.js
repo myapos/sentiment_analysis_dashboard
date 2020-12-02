@@ -1,13 +1,14 @@
 import React from "react";
 import { Form } from "react-final-form";
 import { createUseStyles } from "react-jss";
+import { useDispatch } from "react-redux";
+import classnames from "classnames";
 
 import { styles } from "./styles";
 import { commonStyles } from "../../common/styles";
-import classnames from "classnames";
 import { ReactComponent as FBLogo } from "../../images/facebook-svgrepo-com.svg";
-import { useDispatch } from "react-redux";
 import { sendLogin } from "./LoginSlice";
+
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
 function LoginForm(props) {
@@ -24,16 +25,16 @@ function LoginForm(props) {
       </div>
       <Form
         onSubmit={() => dispatch(sendLogin())}
-        initialValues={{ stooge: "larry", employed: false }}
+        initialValues={{}}
         render={({ handleSubmit, form, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>
             <div className={classes.rowItem}>
               <button
                 type="submit"
                 className={classnames(
-                  classes.facebookBtn,
+                  classes.button,
                   classes.center,
-                  classes.button
+                  classes.facebookBtn
                 )}
               >
                 <FBLogo className={classes.facebookLogo} />

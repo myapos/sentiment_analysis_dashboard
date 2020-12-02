@@ -1,24 +1,34 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createUseStyles } from "react-jss";
 import classnames from "classnames";
+
+import Header from "../../features/Header/Header";
+import Content from "../../features/Content/Content";
+import Modal from "../../features/Modal/";
+import { selectModal, showModal } from "../../features/Modal/ModalSlice";
+import { sendLogout } from "../../pages/Login/LoginSlice";
 import { styles } from "./styles";
-import { sendLogout } from "../Login/LoginSlice";
 import { commonStyles } from "../../common/styles";
+import { fetchTweets } from "./DashboardSlice";
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
 const Dashboard = () => {
-  const dispatch = useDispatch();
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const handleSubmit = (term) => dispatch(fetchTweets(term));
+
+  const modal = useSelector(selectModal);
+
   return (
-    <div>
-      Dashboard
-      <div
-        className={classnames(classes.logout, classes.center)}
-        onClick={() => dispatch(sendLogout())}
-      >
-        Logout
-      </div>
+    <div className={classnames(classes.container)}>
+      <Modal
+        handleClose={() => dispatch(showModal({ show: false }))}
+        yes={sendLogout}
+        {...modal}
+      />
+      <Header />
+      <Content handleSubmit={handleSubmit} />
     </div>
   );
 };
