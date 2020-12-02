@@ -57,9 +57,9 @@ function* callTwitter(action) {
   const res = yield call(api.fetchTweets, action.payload.term);
 
   if (!isError(res)) {
-    const { data: tweets, meta } = res;
+    const { data: tweets, meta, score } = res;
 
-    yield put(receivedTweets(tweets));
+    yield put(receivedTweets({ tweets, score }));
   }
 }
 
