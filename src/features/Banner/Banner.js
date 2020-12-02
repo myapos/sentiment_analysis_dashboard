@@ -3,23 +3,29 @@ import Alert from "react-bootstrap/Alert";
 import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import BeatLoader from "react-spinners/BeatLoader";
 import { createUseStyles } from "react-jss";
 
 import { styles } from "./styles";
+import { commonStyles } from "../../common/styles";
 import { selectBannerStack, showBanner, selectShowBanner } from "./BannerSlice";
 
-import { selectTweets } from "../../pages/Dashboard/DashboardSlice";
+import {
+  selectTweets,
+  selectFetching,
+} from "../../pages/Dashboard/DashboardSlice";
 
-const useStyles = createUseStyles({ ...styles });
+const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
 function Banner(props) {
   const dispatch = useDispatch();
   const error = useSelector(selectBannerStack);
   const tweets = useSelector(selectTweets);
   const displayBanner = useSelector(selectShowBanner);
+  const fetching = useSelector(selectFetching);
   const classes = useStyles();
 
-  console.log("error", error, " tweets", tweets);
+  console.log("error", error, " tweets", tweets, " fetching", fetching);
 
   let BANNER_MESSAGE = "";
   let BANNER_TYPE = "";
@@ -36,6 +42,14 @@ function Banner(props) {
     BANNER_MESSAGE = "Success";
   }
 
+  if (fetching) {
+    // show spinner
+    return (
+      <div className={classes.center}>
+        <BeatLoader color={"#0e47a1"} />
+      </div>
+    );
+  }
   if (displayBanner) {
     return (
       <span className={classes.container}>

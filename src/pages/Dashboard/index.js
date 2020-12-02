@@ -8,14 +8,13 @@ import Content from "../../features/Content/Content";
 
 import { styles } from "./styles";
 import { commonStyles } from "../../common/styles";
-import { fetchTweets, selectFetching } from "./DashboardSlice";
+import { fetchTweets } from "./DashboardSlice";
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
 const Dashboard = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const handleSubmit = (term) => dispatch(fetchTweets(term));
-  const fetching = useSelector(selectFetching);
 
   return (
     <div className={classnames(classes.container)}>
