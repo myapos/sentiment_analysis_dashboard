@@ -21,7 +21,7 @@ const Dashboard = () => {
   const modal = useSelector(selectModal);
   return (
     <div className={classnames(classes.container)}>
-      <Modal handleClose={() => dispatch(showModal(false))} {...modal} />
+      {/* <Modal handleClose={() => dispatch(showModal(false))} {...modal} /> */}
       <Header />
       <Content handleSubmit={handleSubmit} />
     </div>

@@ -25,8 +25,6 @@ function Banner(props) {
   const fetching = useSelector(selectFetching);
   const classes = useStyles();
 
-  console.log("error", error, " tweets", tweets, " fetching", fetching);
-
   let BANNER_MESSAGE = "";
   let BANNER_TYPE = "";
 
