@@ -1,21 +1,26 @@
-import { createUseStyles } from "react-jss";
 import React from "react";
+import { createUseStyles } from "react-jss";
 import { useSelector } from "react-redux";
 
 import classnames from "classnames";
 
 import InputForm from "./InputForm";
 import Score from "../../features/Score";
+import Banner from "../Banner/Banner";
+import Tweets from "../Tweets/Tweets";
+
 import { styles } from "./styles";
 import { commonStyles } from "../../common/styles";
-import Banner from "../Banner/Banner";
 import { selectScore } from "../../pages/Dashboard/DashboardSlice";
+import { selectTweets } from "../../pages/Dashboard/DashboardSlice";
+
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
 function Content(props) {
   const classes = useStyles();
   const { handleSubmit } = props;
   const score = useSelector(selectScore);
+  const tweets = useSelector(selectTweets);
 
   console.log("score", score);
   return (
@@ -41,6 +46,7 @@ function Content(props) {
       </div>
       <Score score={score} />
       <InputForm className={classes.contentItem} handleSubmit={handleSubmit} />
+      <Tweets score={score} tweets={tweets}/>
     </div>
   );
 }

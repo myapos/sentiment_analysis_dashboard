@@ -8,6 +8,11 @@ import * as serviceWorker from "./serviceWorker";
 import "./fonts/Baloo2-Regular.ttf";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
+import 'react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.css';
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

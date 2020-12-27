@@ -1,6 +1,6 @@
 export const styles = {
   container: {
-    height: "35vh",
+    // height: "35vh",
     width: "110vh",
     margin: "10px",
     minHeight: "360px",
