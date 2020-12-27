@@ -5,7 +5,7 @@ export const DasboardSlice = createSlice({
   initialState: {
     term: "",
     tweets: {},
-    score: 0,
+    score: null,
     fetching: false,
   },
   reducers: {
@@ -35,6 +35,9 @@ export const DasboardSlice = createSlice({
       state.tweets = {};
       state.fetching = false;
     },
+    resetScore:(state, action) => {
+      state.score = null;
+    }
   },
 });
 
@@ -42,6 +45,7 @@ export const {
   fetchTweets,
   receivedTweets,
   clearTweets,
+  resetScore,
 } = DasboardSlice.actions;
 
 export const selectTweets = (state) => state.dashboard.tweets;

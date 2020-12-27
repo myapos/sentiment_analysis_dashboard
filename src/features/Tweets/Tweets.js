@@ -58,7 +58,7 @@ function Tweets({ score, tweets }) {
     ],
   };
 
-  if (score > 0) {
+  if (score) {
     return (
       <div className={classes.tweetsContainer}>
         <ToolkitProvider keyField="id" data={tweets} columns={columns} search>
