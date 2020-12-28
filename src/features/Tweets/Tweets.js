@@ -59,7 +59,6 @@ function Tweets({ score, tweets }) {
       },
     ],
     onSizePerPageChange: (size) => {
-      console.log('size per page', size);
       dispatch(setPageSize(size));
     }
   };

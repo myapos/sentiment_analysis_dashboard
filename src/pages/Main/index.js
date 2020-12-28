@@ -25,7 +25,6 @@ const Main = () => {
 
   const classes = useStyles();
 
-  console.log('isVisible',isVisible);
   return (
     <div className={classnames(  {
       [classes['resetContainerHeight']]: !isVisible,
