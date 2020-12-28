@@ -46,6 +46,7 @@ function* logout(action) {
     yield deleteAllCookies();
     // auth to false
     yield put(auth(false));
+    
   }
 }
 
