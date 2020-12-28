@@ -3,7 +3,8 @@ import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import classnames from "classnames";
-
+import { useSelector, useDispatch } from "react-redux";
+import {setPageSize, selectPageSize } from "../Tweets/TweetsSlice";
 import { createUseStyles } from "react-jss";
 import { styles } from "./styles";
 import { commonStyles } from "../../common/styles";
@@ -13,27 +14,28 @@ const useStyles = createUseStyles({ ...styles, ...commonStyles });
 const { SearchBar, ClearSearchButton } = Search;
 
 const columns = [
-    {
-      dataField: "id",
-      text: "Tweet ID",
-      footerAlign: "left",
-      headerStyle: () => {
-        return { width: '25%' };
-      },
+  {
+    dataField: "id",
+    text: "Tweet ID",
+    footerAlign: "left",
+    headerStyle: () => {
+      return { width: "40%" };
     },
-    {
-      dataField: "text",
-      text: "Text",
-    },
-  ];
-
-
+    style: { wordBreak: "break-word" },
+  },
+  {
+    dataField: "text",
+    text: "Text",
+  },
+];
 
 function Tweets({ score, tweets }) {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const pageSize = useSelector(selectPageSize)
 
   const paginationOptions = {
-    sizePerPage: 5,
+    sizePerPage: pageSize,
     sizePerPageList: [
       {
         text: "5",
@@ -56,14 +58,17 @@ function Tweets({ score, tweets }) {
         value: tweets.length,
       },
     ],
+    onSizePerPageChange: (size) => {
+      console.log('size per page', size);
+      dispatch(setPageSize(size));
+    }
   };
 
-  if (score) {
+  if (score !== null) {
     return (
       <div className={classes.tweetsContainer}>
         <ToolkitProvider keyField="id" data={tweets} columns={columns} search>
           {(props) => {
-            console.log("props.searchProps ", props.searchProps);
             return (
               <div>
                 <div className={classes.searchPanel}>
