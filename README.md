@@ -77,7 +77,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 #### TODOS
 
-- Display results in a table
 - Add testing
 - Process tweets
 - Add more authorization providers (Twitter, LinkedIn, Github)
