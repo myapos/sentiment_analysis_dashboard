@@ -22,7 +22,6 @@ function Content(props) {
   const score = useSelector(selectScore);
   const tweets = useSelector(selectTweets);
 
-  console.log("score", score);
   return (
     <div className={classes.contentContainer}>
       <Banner />
