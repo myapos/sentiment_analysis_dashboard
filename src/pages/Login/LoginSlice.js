@@ -6,6 +6,7 @@ export const LoginSlice = createSlice({
     authorized: false,
     sendLogin: false,
     sendLogout: false,
+    social: "",
   },
   reducers: {
     auth: (state, action) => {
@@ -21,7 +22,8 @@ export const LoginSlice = createSlice({
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-      //   state.value += 1;
+      console.log("action", action);
+      state.social = action.payload;
       state.sendLogin = true;
     },
     sendLogout: (state, action) => {
