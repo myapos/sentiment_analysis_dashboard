@@ -5,7 +5,7 @@ import LoginForm from "./LoginForm";
 
 import withParticles from "../../HOCS/withParticles";
 import { styles } from "./styles";
-import { commonStyles } from "../../common/styles";
+import { commonStyles } from "common/styles";
 import classnames from "classnames";
 
 const useStyles = createUseStyles({ ...styles, ...commonStyles });

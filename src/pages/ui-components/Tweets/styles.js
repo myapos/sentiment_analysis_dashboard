@@ -1,4 +1,4 @@
-import { colors } from "../../common/colors";
+import { colors } from "common/colors";
 export const styles = {
   tweetsContainer: {
     display: "flex",
@@ -8,22 +8,22 @@ export const styles = {
   },
   searchPanel: {
     display: "flex",
-    '& label': {
-      flexGrow: '2'
-    }
+    "& label": {
+      flexGrow: "2",
+    },
   },
   searchBar: {
-  //  width: '600px'
+    //  width: '600px'
   },
   clearBtn: {
     backgroundColor: colors.btnBackgroundColor,
     color: colors.textColor,
     borderRadius: "5px",
-    height: '80%',
-    marginLeft: '5px',
+    height: "80%",
+    marginLeft: "5px",
     "&:hover": {
       filter: "brightness(120%)",
       color: colors.textColor,
     },
-  }
+  },
 };

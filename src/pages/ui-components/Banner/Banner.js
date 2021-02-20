@@ -7,13 +7,10 @@ import BeatLoader from "react-spinners/BeatLoader";
 import { createUseStyles } from "react-jss";
 
 import { styles } from "./styles";
-import { commonStyles } from "../../common/styles";
+import { commonStyles } from "common/styles";
 import { selectBannerStack, showBanner, selectShowBanner } from "./BannerSlice";
 
-import {
-  selectTweets,
-  selectFetching,
-} from "../../pages/Dashboard/DashboardSlice";
+import { selectTweets, selectFetching } from "pages/Dashboard/DashboardSlice";
 
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 

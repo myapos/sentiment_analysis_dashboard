@@ -1,8 +1,8 @@
 import LoginReducer from "pages/Login/LoginSlice";
 import DashboardReducer from "pages/Dashboard/DashboardSlice";
-import BannerSlice from "features/Banner/BannerSlice";
-import ModalSlice from "features/Modal/ModalSlice";
-import TweetsSlice from "features/Tweets/TweetsSlice";
+import BannerSlice from "pages/ui-components/Banner/BannerSlice";
+import ModalSlice from "pages/ui-components/Modal/ModalSlice";
+import TweetsSlice from "pages/ui-components/Tweets/TweetsSlice";
 
 export const rootReducer = {
   login: LoginReducer,

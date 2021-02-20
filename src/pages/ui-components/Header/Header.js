@@ -2,11 +2,11 @@ import React from "react";
 import { createUseStyles } from "react-jss";
 
 import { useDispatch } from "react-redux";
+import { commonStyles } from "common/styles";
+
+import { showModal } from "pages/ui-components/Modal/ModalSlice";
+
 import { styles } from "./styles";
-import { commonStyles } from "../../common/styles";
-
-import { showModal } from "../../features/Modal/ModalSlice";
-
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
 function Header(props) {

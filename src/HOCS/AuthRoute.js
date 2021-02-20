@@ -4,7 +4,7 @@ import { Redirect, Route } from "react-router-dom";
 import { withCookies } from "react-cookie";
 import { useDispatch } from "react-redux";
 
-import { auth } from "../pages/Login/LoginSlice";
+import { auth } from "pages/Login/LoginSlice";
 
 const AuthRoute = (props) => {
   const { type, authorized, cookies } = props;

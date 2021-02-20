@@ -1,4 +1,3 @@
-import customFetch from "../utils/customFetch";
 const SOCIALS = {
   FACEBOOK: "facebook",
   TWITTER: "twitter",

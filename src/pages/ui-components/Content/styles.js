@@ -1,4 +1,4 @@
-import { colors } from "../../common/colors";
+import { colors } from "common/colors";
 
 export const styles = {
   contentContainer: {

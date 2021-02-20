@@ -3,15 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { createUseStyles } from "react-jss";
 import classnames from "classnames";
 
-import Header from "../../features/Header/Header";
-import Content from "../../features/Content/Content";
-import Modal from "../../features/Modal/";
+import Header from "pages/ui-components/Header/Header";
+import Content from "pages/ui-components/Content/Content";
+import Modal from "pages/ui-components/Modal";
 
-import { selectModal, showModal } from "../../features/Modal/ModalSlice";
-import { sendLogout } from "../../pages/Login/LoginSlice";
-import { styles } from "./styles";
-import { commonStyles } from "../../common/styles";
+import { selectModal, showModal } from "pages/ui-components/Modal/ModalSlice";
+import { sendLogout } from "pages/Login/LoginSlice";
+import { commonStyles } from "common/styles";
 import { fetchTweets } from "./DashboardSlice";
+import { styles } from "./styles";
+
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
 const Dashboard = () => {

@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import { createUseStyles } from "react-jss";
-
-import Routes from "./Routes";
-import { styles } from "./styles";
-import { commonStyles } from "../../common/styles";
 import classnames from "classnames";
-import { selectTweets } from "../Dashboard/DashboardSlice";
-import { selectPageSize } from "../../features/Tweets/TweetsSlice";
-import { selectAuth } from "../Login/LoginSlice";
+
+import { styles } from "./styles";
+import { commonStyles } from "common/styles";
+import Routes from "./Routes";
+import { selectPageSize } from "pages/ui-components/Tweets/TweetsSlice";
+import { selectTweets } from "pages/Dashboard/DashboardSlice";
+import { selectAuth } from "pages/Login/LoginSlice";
 
 import { observe } from "./observe";
 
@@ -23,15 +23,20 @@ const Main = () => {
   useEffect(() => {
     const gotIsVisible = observe();
     setIsVisible(gotIsVisible);
-  }, [pageSize, tweets])
+  }, [pageSize, tweets]);
 
   const classes = useStyles();
 
   return (
-    <div className={classnames(  {
-      [classes['resetContainerHeight']]: !isVisible && auth,
-      [classes['container']]: isVisible || !auth
-    }, classes.center)}>
+    <div
+      className={classnames(
+        {
+          [classes["resetContainerHeight"]]: !isVisible && auth,
+          [classes["container"]]: isVisible || !auth,
+        },
+        classes.center
+      )}
+    >
       <Routes />
     </div>
   );

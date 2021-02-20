@@ -1,4 +1,4 @@
-import { colors } from "../../common/colors";
+import { colors } from "common/colors";
 export const styles = {
   container: {
     maxWidth: "400px",
@@ -40,8 +40,8 @@ export const styles = {
     color: "white",
   },
   twitter: {
-    color: '#55acee',
-    fill: 'white'
+    color: "#55acee",
+    fill: "white",
   },
   particles: {
     position: "fixed",
@@ -49,7 +49,7 @@ export const styles = {
     zIndex: -1,
   },
   twitterBtn: {
-    backgroundColor: '#55acee',
+    backgroundColor: "#55acee",
   },
   "@media screen and (max-width: 600px)": {
     container: {

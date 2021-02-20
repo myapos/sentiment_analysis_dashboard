@@ -5,14 +5,14 @@ import { useSelector } from "react-redux";
 import classnames from "classnames";
 
 import InputForm from "./InputForm";
-import Score from "../../features/Score";
+import Score from "../Score";
 import Banner from "../Banner/Banner";
 import Tweets from "../Tweets/Tweets";
 
 import { styles } from "./styles";
-import { commonStyles } from "../../common/styles";
-import { selectScore } from "../../pages/Dashboard/DashboardSlice";
-import { selectTweets } from "../../pages/Dashboard/DashboardSlice";
+import { commonStyles } from "common/styles";
+import { selectScore } from "pages/Dashboard/DashboardSlice";
+import { selectTweets } from "pages/Dashboard/DashboardSlice";
 
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
@@ -45,7 +45,7 @@ function Content(props) {
       </div>
       <Score score={score} />
       <InputForm className={classes.contentItem} handleSubmit={handleSubmit} />
-      <Tweets score={score} tweets={tweets}/>
+      <Tweets score={score} tweets={tweets} />
     </div>
   );
 }

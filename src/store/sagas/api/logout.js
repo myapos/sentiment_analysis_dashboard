@@ -1,4 +1,4 @@
-import customFetch from "../utils/customFetch";
+import customFetch from "utils/customFetch";
 
 const login = async () => {
   const url = "http://localhost:8585/logout";
