@@ -7,10 +7,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch } from "react-redux";
 
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { resetScore } from "../../pages/Dashboard/DashboardSlice";
+import { resetScore } from "pages/Dashboard/DashboardSlice";
+
+import { commonStyles } from "common/styles";
 
 import { styles } from "./styles";
-import { commonStyles } from "../../common/styles";
 
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 function InputForm({ className, handleSubmit }) {

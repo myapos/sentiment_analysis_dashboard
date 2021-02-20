@@ -1,6 +1,6 @@
 import { call, put } from "redux-saga/effects";
 import { auth } from "pages/Login/LoginSlice";
-import * as api from "api";
+import * as api from "./api";
 function deleteAllCookies() {
   var cookies = document.cookie.split(";");
 

@@ -4,10 +4,10 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import classnames from "classnames";
 import { useSelector, useDispatch } from "react-redux";
-import {setPageSize, selectPageSize } from "../Tweets/TweetsSlice";
+import { setPageSize, selectPageSize } from "./TweetsSlice";
 import { createUseStyles } from "react-jss";
 import { styles } from "./styles";
-import { commonStyles } from "../../common/styles";
+import { commonStyles } from "common/styles";
 
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
@@ -32,7 +32,7 @@ const columns = [
 function Tweets({ score, tweets }) {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const pageSize = useSelector(selectPageSize)
+  const pageSize = useSelector(selectPageSize);
 
   const paginationOptions = {
     sizePerPage: pageSize,
@@ -60,7 +60,7 @@ function Tweets({ score, tweets }) {
     ],
     onSizePerPageChange: (size) => {
       dispatch(setPageSize(size));
-    }
+    },
   };
 
   if (score !== null) {

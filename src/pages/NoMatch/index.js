@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 import classnames from "classnames";
 
 import { styles } from "./styles";
-import { commonStyles } from "../../common/styles";
+import { commonStyles } from "common/styles";
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
 
 function NoMatch(props) {

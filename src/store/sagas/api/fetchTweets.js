@@ -1,4 +1,4 @@
-import customFetch from "../utils/customFetch";
+import customFetch from "utils/customFetch";
 
 const fetchTweets = async (term) => {
   // const url = "http://localhost:8585/check";
