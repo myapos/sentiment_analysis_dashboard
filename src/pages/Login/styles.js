@@ -9,6 +9,7 @@ export const styles = {
     background: "whitesmoke",
     borderRadius: "5px",
     boxShadow: "10px 8px 10px #000",
+    display: "flex",
     flexDirection: "column",
   },
   welcome: {
@@ -43,6 +44,10 @@ export const styles = {
     color: "#55acee",
     fill: "white",
   },
+  linkedin: {
+    color: "#0B78B7",
+    fill: "white",
+  },
   particles: {
     position: "fixed",
     top: 0,
@@ -50,6 +55,9 @@ export const styles = {
   },
   twitterBtn: {
     backgroundColor: "#55acee",
+  },
+  linkedInBtn: {
+    backgroundColor: "#0B78B7",
   },
   "@media screen and (max-width: 600px)": {
     container: {
