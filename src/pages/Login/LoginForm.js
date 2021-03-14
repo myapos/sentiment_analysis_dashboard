@@ -8,6 +8,7 @@ import { styles } from "./styles";
 import { commonStyles } from "common/styles";
 import { ReactComponent as FBLogo } from "images/facebook-svgrepo-com.svg";
 import { ReactComponent as TwitterLogo } from "images/twitter.svg";
+import { ReactComponent as LinkedInLogo } from "images/linkedin.svg";
 import { sendLogin } from "./LoginSlice";
 
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
@@ -33,7 +34,7 @@ function LoginForm(props) {
               <button
                 className={cn(
                   classes.button,
-                  classes.center,
+                  // classes.center,
                   classes.facebookBtn,
                   classes.socialBtn
                 )}
@@ -42,14 +43,14 @@ function LoginForm(props) {
                 }}
               >
                 <FBLogo className={cn(classes.logo, classes.facebookLogo)} />
-                Continue with Facebook
+                <div>Continue with Facebook</div>
               </button>
             </div>
             <div className={classes.rowItem}>
               <button
                 className={cn(
                   classes.button,
-                  classes.center,
+                  // classes.center,
                   classes.socialBtn,
                   classes.twitterBtn
                 )}
@@ -59,7 +60,25 @@ function LoginForm(props) {
                 }}
               >
                 <TwitterLogo className={cn(classes.logo, classes.twitter)} />
-                Continue with Twitter
+                <div>Continue with Twitter</div>
+              </button>
+            </div>
+            <div className={classes.rowItem}>
+              <button
+                className={cn(
+                  classes.button,
+                  // classes.center,
+                  classes.socialBtn,
+                  classes.linkedInBtn
+                )}
+                onClick={() => {
+                  console.log("login with linkedin");
+
+                  dispatch(sendLogin("LINKEDIN"));
+                }}
+              >
+                <LinkedInLogo className={cn(classes.logo, classes.linkedin)} />
+                <div>Continue with LinkedIn</div>
               </button>
             </div>
           </form>

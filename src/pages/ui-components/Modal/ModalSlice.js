@@ -6,8 +6,8 @@ export const ModalSlice = createSlice({
     show: false,
     body: "",
     title: "",
-    onSaveText: "yes",
-    onCloseText: "no",
+    onSaveText: "Yes",
+    onCloseText: "No",
   },
   reducers: {
     showModal: (state, action) => {

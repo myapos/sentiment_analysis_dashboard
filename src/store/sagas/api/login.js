@@ -1,6 +1,7 @@
 const SOCIALS = {
   FACEBOOK: "facebook",
   TWITTER: "twitter",
+  LINKEDIN: "linkedin",
 };
 const login = async (social) => {
   try {
