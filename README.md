@@ -79,4 +79,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 - Add testing
 - Process tweets
-- Add more authorization providers (Twitter, LinkedIn, Github)
+- Add more authorization providers (Twitter, LinkedIn, Google)
+- Add username in the dashboard
