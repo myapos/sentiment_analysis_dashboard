@@ -1,8 +1,5 @@
-const SOCIALS = {
-  FACEBOOK: "facebook",
-  TWITTER: "twitter",
-  LINKEDIN: "linkedin",
-};
+import { SOCIALS } from "common/socials";
+
 const login = async (social) => {
   try {
     // const url = "http://localhost:8585/check";

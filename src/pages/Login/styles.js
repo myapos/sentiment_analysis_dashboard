@@ -1,10 +1,10 @@
 import { colors } from "common/colors";
 export const styles = {
   container: {
-    maxWidth: "400px",
+    maxWidth: "500px",
     minWidth: "250px",
-    maxHeight: "200px",
-    // height: "35vh",
+    maxHeight: "350px",
+    height: "35vh",
     width: "80vh",
     background: "whitesmoke",
     borderRadius: "5px",
@@ -48,6 +48,9 @@ export const styles = {
     color: "#0B78B7",
     fill: "white",
   },
+  google: {
+    backgroundColor: "white",
+  },
   particles: {
     position: "fixed",
     top: 0,
@@ -56,6 +59,9 @@ export const styles = {
   twitterBtn: {
     backgroundColor: "#55acee",
   },
+  googleBtn: {
+    backgroundColor: "#4285f4",
+  },
   linkedInBtn: {
     backgroundColor: "#0B78B7",
   },
@@ -63,6 +69,7 @@ export const styles = {
     container: {
       minWidth: "200px",
       minHeight: "100px",
+      width: "35vh",
     },
     welcome: {
       fontSize: "1.4rem",
