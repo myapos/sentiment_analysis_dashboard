@@ -7,7 +7,7 @@ export const styles = {
   },
   "@media screen and (max-width: 768px), screen and (max-height:768px)": {
     container: {
-      height: "inherit",
+      // height: "inherit",
     },
   },
 };

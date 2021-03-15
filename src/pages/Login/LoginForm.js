@@ -9,6 +9,7 @@ import { commonStyles } from "common/styles";
 import { ReactComponent as FBLogo } from "images/facebook-svgrepo-com.svg";
 import { ReactComponent as TwitterLogo } from "images/twitter.svg";
 import { ReactComponent as LinkedInLogo } from "images/linkedin.svg";
+import { ReactComponent as GoogleLogo } from "images/google.svg";
 import { sendLogin } from "./LoginSlice";
 
 const useStyles = createUseStyles({ ...styles, ...commonStyles });
@@ -79,6 +80,24 @@ function LoginForm(props) {
               >
                 <LinkedInLogo className={cn(classes.logo, classes.linkedin)} />
                 <div>Continue with LinkedIn</div>
+              </button>
+            </div>
+            <div className={classes.rowItem}>
+              <button
+                className={cn(
+                  classes.button,
+                  // classes.center,
+                  classes.socialBtn,
+                  classes.googleBtn
+                )}
+                onClick={() => {
+                  console.log("login with google");
+
+                  dispatch(sendLogin("GOOGLE"));
+                }}
+              >
+                <GoogleLogo className={cn(classes.logo, classes.google)} />
+                <div>Continue with Google</div>
               </button>
             </div>
           </form>
