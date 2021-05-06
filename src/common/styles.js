@@ -12,7 +12,7 @@ export const commonStyles = {
     fontSize: "1.2rem",
     border: "0",
     display: "flex",
-    // justifyContent: "space-between",
+
     borderRadius: "5px",
     "&:hover": {
       cursor: "pointer",
