@@ -35,9 +35,10 @@ function LoginForm(props) {
               <button
                 className={cn(
                   classes.button,
-                  // classes.center,
                   classes.facebookBtn,
-                  classes.socialBtn
+                  classes.socialBtn,
+                  "justify-content-between",
+                  "align-items-center"
                 )}
                 onClick={() => {
                   dispatch(sendLogin("FACEBOOK"));
@@ -53,7 +54,9 @@ function LoginForm(props) {
                   classes.button,
                   // classes.center,
                   classes.socialBtn,
-                  classes.twitterBtn
+                  classes.twitterBtn,
+                  "justify-content-between",
+                  "align-items-center"
                 )}
                 onClick={() => {
                   console.log("login with twitter");
@@ -70,7 +73,9 @@ function LoginForm(props) {
                   classes.button,
                   // classes.center,
                   classes.socialBtn,
-                  classes.linkedInBtn
+                  classes.linkedInBtn,
+                  "justify-content-between",
+                  "align-items-center"
                 )}
                 onClick={() => {
                   console.log("login with linkedin");
@@ -88,7 +93,9 @@ function LoginForm(props) {
                   classes.button,
                   // classes.center,
                   classes.socialBtn,
-                  classes.googleBtn
+                  classes.googleBtn,
+                  "justify-content-between",
+                  "align-items-center"
                 )}
                 onClick={() => {
                   console.log("login with google");
