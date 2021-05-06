@@ -28,13 +28,12 @@ const Main = () => {
   const classes = useStyles();
 
   const hasTweets = tweets.length > 0;
-
   return (
     <div
       className={classnames(
         {
-          [classes["resetContainerHeight"]]: !isVisible && auth,
           [classes["centerContainer"]]: isVisible || !auth,
+          [classes["reset"]]: hasTweets && auth,
         },
         classes.center
       )}
