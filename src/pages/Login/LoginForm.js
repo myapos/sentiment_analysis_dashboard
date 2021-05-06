@@ -6,6 +6,7 @@ import cn from "classnames";
 
 import { styles } from "./styles";
 import { commonStyles } from "common/styles";
+import Logo from "pages/ui-components/Logo/Logo";
 import { ReactComponent as FBLogo } from "images/facebook-svgrepo-com.svg";
 import { ReactComponent as TwitterLogo } from "images/twitter.svg";
 import { ReactComponent as LinkedInLogo } from "images/linkedin.svg";
@@ -21,6 +22,7 @@ function LoginForm(props) {
 
   return (
     <>
+      <Logo />
       <div className={cn(classes.welcome, classes.center, classes.rowItem)}>
         Welcome to SAM
       </div>
