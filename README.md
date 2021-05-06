@@ -82,3 +82,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 - Add username in the dashboard
 - Add logo
 - Add version
+- deploy in production
