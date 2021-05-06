@@ -43,7 +43,6 @@ const withParticles = (Component) => {
         <Particles
           id="tsparticles"
           className={classes.particles}
-          // height="100%"
           width={`${backgroundWidth}px`}
           height={`${backgroundHeight}px`}
           options={{

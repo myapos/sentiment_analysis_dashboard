@@ -75,8 +75,5 @@ export const styles = {
     welcome: {
       fontSize: "1.4rem",
     },
-    // facebookBtn: {
-    //   width: "100%",
-    // },
   },
 };

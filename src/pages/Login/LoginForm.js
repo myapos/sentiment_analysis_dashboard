@@ -37,7 +37,7 @@ function LoginForm(props) {
                   classes.button,
                   classes.facebookBtn,
                   classes.socialBtn,
-                  // "justify-content-between",
+
                   "align-items-center"
                 )}
                 onClick={() => {
@@ -56,7 +56,7 @@ function LoginForm(props) {
                   classes.button,
                   classes.socialBtn,
                   classes.twitterBtn,
-                  // "justify-content-between",
+
                   "align-items-center"
                 )}
                 onClick={() => {
@@ -74,10 +74,10 @@ function LoginForm(props) {
               <button
                 className={cn(
                   classes.button,
-                  // classes.center,
+
                   classes.socialBtn,
                   classes.linkedInBtn,
-                  // "justify-content-between",
+
                   "align-items-center"
                 )}
                 onClick={() => {
@@ -96,10 +96,10 @@ function LoginForm(props) {
               <button
                 className={cn(
                   classes.button,
-                  // classes.center,
+
                   classes.socialBtn,
                   classes.googleBtn,
-                  // "justify-content-between",
+
                   "align-items-center"
                 )}
                 onClick={() => {
