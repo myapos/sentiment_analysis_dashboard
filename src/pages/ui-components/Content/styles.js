@@ -58,6 +58,9 @@ export const styles = {
       filter: "brightness(120%)",
     },
   },
+  logo: {
+    width: "10%",
+  },
   title: {},
   "@media screen and (max-width: 600px)": {
     contentContainer: {
