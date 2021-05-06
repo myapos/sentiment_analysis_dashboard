@@ -21,10 +21,14 @@ const withParticles = (Component) => {
   const EnhancedWithParticles = (props) => {
     const classes = useStyles();
     const [backgroundWidth, setBackgroundWidth] = useState(window.innerWidth);
+    const [backgroundHeight, setBackgroundHeight] = useState(
+      window.innerHeight
+    );
     useEffect(() => {
       // https://www.pluralsight.com/guides/re-render-react-component-on-window-resize
       const debouncedHandleResize = debounce(function handleResize() {
         setBackgroundWidth(window.innerWidth);
+        setBackgroundHeight(window.innerHeight);
       }, 100);
 
       window.addEventListener("resize", debouncedHandleResize);
@@ -39,8 +43,9 @@ const withParticles = (Component) => {
         <Particles
           id="tsparticles"
           className={classes.particles}
-          height="100vh"
+          // height="100%"
           width={`${backgroundWidth}px`}
+          height={`${backgroundHeight}px`}
           options={{
             background: {
               color: {

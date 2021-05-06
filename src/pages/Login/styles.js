@@ -4,7 +4,7 @@ export const styles = {
     maxWidth: "500px",
     minWidth: "250px",
     maxHeight: "350px",
-    height: "35vh",
+    height: "55vh",
     width: "80vh",
     background: "whitesmoke",
     borderRadius: "5px",
@@ -69,14 +69,14 @@ export const styles = {
     container: {
       minWidth: "200px",
       minHeight: "100px",
-      width: "35vh",
+      width: "55vh",
+      height: "55vh",
     },
     welcome: {
       fontSize: "1.4rem",
     },
-    facebookBtn: {
-      width: "100%",
-      fontSize: "0.8rem!important",
-    },
+    // facebookBtn: {
+    //   width: "100%",
+    // },
   },
 };
