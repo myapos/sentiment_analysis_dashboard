@@ -10,6 +10,7 @@ import Routes from "./Routes";
 import { selectPageSize } from "pages/ui-components/Tweets/TweetsSlice";
 import { selectTweets } from "pages/Dashboard/DashboardSlice";
 import { selectAuth } from "pages/Login/LoginSlice";
+import Version from "pages/ui-components/Version";
 
 import { observe } from "./observe";
 
@@ -39,6 +40,8 @@ const Main = () => {
       )}
     >
       <Routes />
+
+      <Version />
     </div>
   );
 };
