@@ -1,6 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
-
+import Version from "pages/ui-components/Version";
 import LoginForm from "./LoginForm";
 
 import withParticles from "../../HOCS/withParticles";

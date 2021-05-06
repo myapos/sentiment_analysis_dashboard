@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 import { useSelector } from "react-redux";
 import classnames from "classnames";
 
-import Logo from "pages/ui-components/Logo/Logo";
+import Logo from "pages/ui-components/Logo";
 
 import InputForm from "./InputForm";
 import Score from "../Score";

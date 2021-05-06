@@ -9,7 +9,6 @@ const useStyles = createUseStyles({ ...styles });
 const Logo = ({ className }) => {
   const classes = useStyles();
 
-  console.log("className", className);
   return (
     <div className={cn(classes.container, "d-flex", "justify-content-center")}>
       <img
