@@ -12,14 +12,21 @@ export const commonStyles = {
     fontSize: "1.2rem",
     border: "0",
     display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
+
     borderRadius: "5px",
     "&:hover": {
       cursor: "pointer",
     },
     "&:focus": {
       outline: "none",
+    },
+    boxShadow: "5px 4px 2px #000",
+  },
+  "@media screen and (max-width: 768px)": {
+    button: {
+      fontSize: "0.8rem",
+      width: "160px",
+      minWidth: "160px",
     },
   },
 };

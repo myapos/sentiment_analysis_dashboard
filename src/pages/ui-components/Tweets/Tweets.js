@@ -78,7 +78,11 @@ function Tweets({ score, tweets }) {
                   />
                   <ClearSearchButton
                     {...props.searchProps}
-                    className={classnames(classes.button, classes.clearBtn)}
+                    className={classnames(
+                      classes.button,
+                      classes.clearBtn,
+                      classes.center
+                    )}
                   />
                 </div>
                 <BootstrapTable

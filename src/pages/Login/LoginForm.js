@@ -35,42 +35,50 @@ function LoginForm(props) {
               <button
                 className={cn(
                   classes.button,
-                  // classes.center,
                   classes.facebookBtn,
-                  classes.socialBtn
+                  classes.socialBtn,
+
+                  "align-items-center"
                 )}
                 onClick={() => {
                   dispatch(sendLogin("FACEBOOK"));
                 }}
               >
-                <FBLogo className={cn(classes.logo, classes.facebookLogo)} />
-                <div>Continue with Facebook</div>
+                <FBLogo
+                  className={cn(classes.logo, classes.facebookLogo, "mr-2")}
+                />
+                <div>Login with Facebook</div>
               </button>
             </div>
             <div className={classes.rowItem}>
               <button
                 className={cn(
                   classes.button,
-                  // classes.center,
                   classes.socialBtn,
-                  classes.twitterBtn
+                  classes.twitterBtn,
+
+                  "align-items-center"
                 )}
                 onClick={() => {
                   console.log("login with twitter");
                   dispatch(sendLogin("TWITTER"));
                 }}
               >
-                <TwitterLogo className={cn(classes.logo, classes.twitter)} />
-                <div>Continue with Twitter</div>
+                <TwitterLogo
+                  className={cn(classes.logo, classes.twitter, "mr-2")}
+                />
+                <div>Login with Twitter</div>
               </button>
             </div>
             <div className={classes.rowItem}>
               <button
                 className={cn(
                   classes.button,
-                  // classes.center,
+
                   classes.socialBtn,
-                  classes.linkedInBtn
+                  classes.linkedInBtn,
+
+                  "align-items-center"
                 )}
                 onClick={() => {
                   console.log("login with linkedin");
@@ -78,17 +86,21 @@ function LoginForm(props) {
                   dispatch(sendLogin("LINKEDIN"));
                 }}
               >
-                <LinkedInLogo className={cn(classes.logo, classes.linkedin)} />
-                <div>Continue with LinkedIn</div>
+                <LinkedInLogo
+                  className={cn(classes.logo, classes.linkedin, "mr-2")}
+                />
+                <div>Login with LinkedIn</div>
               </button>
             </div>
             <div className={classes.rowItem}>
               <button
                 className={cn(
                   classes.button,
-                  // classes.center,
+
                   classes.socialBtn,
-                  classes.googleBtn
+                  classes.googleBtn,
+
+                  "align-items-center"
                 )}
                 onClick={() => {
                   console.log("login with google");
@@ -96,8 +108,10 @@ function LoginForm(props) {
                   dispatch(sendLogin("GOOGLE"));
                 }}
               >
-                <GoogleLogo className={cn(classes.logo, classes.google)} />
-                <div>Continue with Google</div>
+                <GoogleLogo
+                  className={cn(classes.logo, classes.google, "mr-2")}
+                />
+                <div>Login with Google</div>
               </button>
             </div>
           </form>
