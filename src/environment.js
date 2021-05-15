@@ -2,7 +2,7 @@
 const environment = () => {
   const env = {};
 
-  if (process.env.NODE_ENV === "development") {
+  if (process.env.REACT_APP_ENVIRONMENT === "development") {
     env.PORT = "8585";
     env.BASE_URL = `http://localhost:${env.PORT}`;
   } else {
@@ -10,7 +10,12 @@ const environment = () => {
     env.BASE_URL = `https://sentimental-analysis-server.herokuapp.com/`;
   }
 
-  console.log("process.env.NODE_ENV", process.env.NODE_ENV, "env", env);
+  console.log(
+    "process.env.REACT_APP_ENVIRONMENT",
+    process.env.REACT_APP_ENVIRONMENT,
+    "env",
+    env
+  );
 
   return {
     ...env,
