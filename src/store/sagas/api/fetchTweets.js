@@ -1,12 +1,11 @@
 import customFetch from "utils/customFetch";
+import environment from "environment";
 
 const fetchTweets = async (term) => {
-  // const url = "http://localhost:8585/check";
-  const url =
-    "http://localhost:8585/tweets?query=" + window.encodeURIComponent(term);
-  const res = customFetch(url);
+  const env = environment();
+  const url = `${env.BASE_URL}/tweets?query=${window.encodeURIComponent(term)}`;
 
-  return res;
+  return customFetch(url);
 };
 
 export default fetchTweets;
