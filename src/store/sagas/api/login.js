@@ -7,7 +7,8 @@ const login = async (social) => {
     console.log("env", env);
     const url = `${env.BASE_URL}/login/${SOCIALS[social]}`;
 
-    return (window.location.href = url);
+    console.log("url", url);
+    // return (window.location.href = url);
   } catch (e) {
     console.error("error:", e);
   }
