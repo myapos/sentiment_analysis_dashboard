@@ -4,6 +4,7 @@ const login = async (social) => {
   try {
     const env = environment();
 
+    console.log("env", env);
     const url = `${env.BASE_URL}/login/${SOCIALS[social]}`;
 
     return (window.location.href = url);
