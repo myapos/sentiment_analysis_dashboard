@@ -83,7 +83,7 @@ function LoginForm(props) {
                   "align-items-center"
                 )}
                 onClick={() => {
-                  console.log("login with linkedin");
+                  console.log("Login with linkedin");
 
                   dispatch(sendLogin("LINKEDIN"));
                 }}
