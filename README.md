@@ -15,7 +15,7 @@ In the project directory, you can run:
 ### `yarn start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:8585](http://localhost:8585) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
@@ -81,4 +81,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 - Process tweets
 - Add username in the dashboard
 - Add version
-- deploy in production
+- deploy in heroku production
+
+### Server
+
+The server is live and active in the following URL `https://sentimental-analysis-server.herokuapp.com/`

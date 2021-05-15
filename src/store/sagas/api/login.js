@@ -1,9 +1,10 @@
 import { SOCIALS } from "common/socials";
-
+import environment from "environment";
 const login = async (social) => {
   try {
-    // const url = "http://localhost:8585/check";
-    const url = `http://localhost:8585/login/${SOCIALS[social]}`;
+    const env = environment();
+
+    const url = `${env.BASE_URL}/login/${SOCIALS[social]}`;
 
     return (window.location.href = url);
   } catch (e) {

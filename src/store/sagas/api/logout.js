@@ -1,9 +1,12 @@
 import customFetch from "utils/customFetch";
-
+import environment from "environment";
 const login = async () => {
-  const url = "http://localhost:8585/logout";
+  const env = environment();
+
+  const url = `${env.BASE_URL}/logout`;
 
   const res = await customFetch(url);
+
   return res;
 };
 
