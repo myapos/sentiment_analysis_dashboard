@@ -62,7 +62,7 @@ function LoginForm(props) {
                   "align-items-center"
                 )}
                 onClick={() => {
-                  console.log("login with twitter");
+                  console.log("Login with twitter");
                   dispatch(sendLogin("TWITTER"));
                 }}
               >
