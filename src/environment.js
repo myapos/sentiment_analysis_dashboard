@@ -10,6 +10,8 @@ const environment = () => {
     env.BASE_URL = `https://sentimental-analysis-server.herokuapp.com/`;
   }
 
+  console.log("process.env.NODE_ENV", process.env.NODE_ENV, " env", env);
+
   return {
     ...env,
   };
